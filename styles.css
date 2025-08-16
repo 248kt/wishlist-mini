@@ -1,0 +1,67 @@
+/* Theme variables */
+:root{
+  --bg: #f7f7f8;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted:#6b7280;
+  --accent:#6366f1;
+  --border:#e5e7eb;
+  --success:#22c55e;
+  --danger:#ef4444;
+}
+html[data-theme="dark"]:root{
+  --bg:#0b0c10;
+  --card:#111217;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#8b5cf6;
+  --border:#1f2937;
+  --success:#22c55e;
+  --danger:#f87171;
+}
+
+/* Layout & base */
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  background:var(--bg); color:var(--text); min-height:100svh; display:grid; place-items:center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.wrap{ width:min(720px, 92vw); margin-inline:auto; position:relative; }
+
+.app{
+  position:relative; padding:28px; border-radius:24px; background:var(--card); box-shadow: 0 10px 30px rgba(0,0,0,.08), 0 1px 0 var(--border) inset;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease;
+}
+@keyframes fadeInUp { from { opacity:0; transform: translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+.topbar{ display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+.brand{ font-weight:700; font-size:18px; opacity:.9; }
+
+.theme-toggle{ position:fixed; top:16px; right:16px; width:42px; height:42px; border:1px solid var(--border); background:transparent; color:var(--text); border-radius:999px; cursor:pointer; display:grid; place-items:center; font-size:18px; transition: background 0.3s ease, transform 0.3s ease; }
+.theme-toggle:hover{ background:var(--border); transform:rotate(15deg); }
+
+.inputRow{ display:flex; gap:10px; margin:14px 0 24px; }
+.input{ flex:1; padding:16px 18px; border-radius:14px; border:1px solid var(--border); background:transparent; color:var(--text); font-size:16px; transition:border 0.3s ease, box-shadow 0.3s ease; }
+.input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 4px color-mix(in oklab, var(--accent) 18%, transparent); }
+.addBtn{ padding:14px 18px; border:none; border-radius:14px; background:var(--accent); color:white; font-weight:700; cursor:pointer; transition: background 0.3s ease, transform 0.2s ease; }
+.addBtn:hover{ background:color-mix(in oklab, var(--accent) 80%, black); transform:scale(1.05); }
+
+.list{ display:grid; gap:10px; }
+.row{ display:grid; grid-template-columns: 1fr auto auto; gap:8px; align-items:center; padding:12px; border:1px solid var(--border); border-radius:14px; background: color-mix(in oklab, var(--card) 92%, var(--bg)); animation: fadeSlideIn .3s ease; }
+.row.done .itemText{ text-decoration: line-through; opacity:.6; }
+
+@keyframes fadeSlideIn { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeOutShrink { to{opacity:0; transform:translateY(4px) scale(.96);} }
+@keyframes pop { 0%{transform:scale(1);} 40%{transform:scale(1.05);} 100%{transform:scale(1);} }
+
+.label{ display:flex; align-items:center; gap:10px; font-weight:600; }
+.ghostBtn{ border:1px solid var(--border); background:transparent; color:var(--text); padding:10px 12px; border-radius:12px; cursor:pointer; font-weight:600; transition: background 0.3s ease, transform 0.2s ease; }
+.ghostBtn:hover{ background:var(--border); transform:scale(1.05); }
+
+.empty{ text-align:center; color:var(--muted); padding:22px 8px; }
+.footer{ margin-top:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px; }
+
+.muted {
+  color: var(--muted);
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wishlist.mini</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js" defer></script>
+  <script src="./app.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body>
+  <button id="themeBtn" class="theme-toggle" aria-label="Toggle theme">🌞</button>
+  <div class="wrap">
+    <div class="app" role="application">
+      <div class="topbar"><div class="brand">Wishlist<span class="muted">.mini</span></div></div>
+      <div class="inputRow">
+        <input id="itemInput" class="input" type="text" placeholder="Add an item..." />
+        <button id="addBtn" class="addBtn" disabled>Add</button>
+      </div>
+      <div id="list" class="list"></div>
+      <div id="empty" class="empty">Your wishlist is empty. Add something ✨</div>
+      <div class="footer">
+        <span id="count">0 items</span>
+        <button id="clearBtn" class="ghostBtn danger">Clear all</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
