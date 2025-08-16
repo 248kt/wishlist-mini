@@ -1,4 +1,4 @@
-# Wishlist — Minimal
+# Wishlist
 
 A tiny, minimal wishlist web app. Everything is saved locally (LocalStorage).
 
